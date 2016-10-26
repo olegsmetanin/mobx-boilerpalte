@@ -1,0 +1,3 @@
+{
+  "module:title": "module en ${title} ${ count === 1  ? 'one' : count === 2 ? 'two' : 'many'}"
+}
