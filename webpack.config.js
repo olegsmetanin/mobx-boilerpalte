@@ -46,15 +46,6 @@ var config = {
                 ]
             },
             {
-                test: /\.scss$/,
-                loaders: ['style',
-                    'css?sourceMap!postcss!resolve-url!sass?sourceMap!sass-resources'
-                ],
-                include: [
-                    path.join(__dirname, './src'),
-                ]
-            },
-            {
                 test: /\.json$/,
                 loaders: ['json'],
                 include: [
@@ -77,7 +68,19 @@ var config = {
                 loader: 'file?name=fonts/[name].[ext]',
                 include: path.join(__dirname, './node_modules/bootstrap-sass/assets/fonts/bootstrap')
             }
-        ]
+        ].concat(isProduction ? [{
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract(['css', 'postcss', 'resolve-url', 'sass?sourceMap']),
+            include: [
+                path.join(__dirname, './src'),
+            ]
+        }] : [{
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'postcss', 'resolve-url', 'sass?sourceMap'],
+            include: [
+                path.join(__dirname, './src'),
+            ]
+        }])
     },
     ts: {
         compiler: 'typescript'
@@ -107,12 +110,18 @@ var config = {
         new webpack.optimize.CommonsChunkPlugin({ name: 'lib' }),
         //https://github.com/moment/moment/issues/1435#issuecomment-232687733
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-        //new ExtractTextPlugin('./css/app.css', { allChunks: true, publicPath: '/css' }),
-
     ].concat(isProduction ? [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
-            minimize: true
-        })
+            compress: {
+                warnings: true
+            }
+        }),
+        new ExtractTextPlugin('./css/app.css', { allChunks: true, publicPath: '/css' })
     ] : [])
 };
 
