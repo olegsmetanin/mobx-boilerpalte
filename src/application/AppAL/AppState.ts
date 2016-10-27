@@ -1,4 +1,4 @@
-import {observable} from 'application/lib/Reactive'
+import {observable} from 'application/lib/reactive'
 import {ContainerWidth} from 'components'
 import {I18n} from 'application/api/i18n/I18n'
 import {IAppState} from './IAppState'

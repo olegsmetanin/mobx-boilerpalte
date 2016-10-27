@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import * as React from 'react'
 /* tslint:enable:no-unused-variable */
-import {IndexRoute, Route} from 'application/lib/Router'
+import {IndexRoute, Route} from 'application/lib/router'
 
 import {IAppState} from 'application/AppAL/IAppState'
 import {IUserActions} from 'application/AppAL/User/IUserActions'

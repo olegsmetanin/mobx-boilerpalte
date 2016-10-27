@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {Router} from 'application/lib/Router'
-import {Provider, observer, reaction} from 'application/lib/Reactive'
+import {Router} from 'application/lib/router'
+import {Provider, observer, reaction} from 'application/lib/reactive'
 
 import routes from './routes/index'
 

@@ -4,7 +4,7 @@ import {UserMockService} from './AppAL/User/UserMockService'
 import {UserActions} from './AppAL/User/UserActions'
 import {SystemMockService} from './AppAL/System/SystemMockService'
 import {SystemActions} from './AppAL/System/SystemActions'
-import {hashHistory} from 'application/lib/Router'
+import {hashHistory} from 'application/lib/router'
 import {EventBus} from 'application/lib/eventBus/EventBus';
 
 export function initAppContext(initState: any) {

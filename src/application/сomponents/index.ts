@@ -1,5 +1,5 @@
-import {inject, observer} from 'application/lib/Reactive'
-import {withRouter} from 'application/lib/Router'
+import {inject, observer} from 'application/lib/reactive'
+import {withRouter} from 'application/lib/router'
 
 import {Layout as BaseLayout} from './Layout'
 import {Nav as BaseNav} from './Nav'
