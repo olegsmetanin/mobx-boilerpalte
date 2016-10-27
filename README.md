@@ -1,4 +1,4 @@
-# UIKit
+# MobX boilerplate
 
 Typescript + React + MobX + React-router
 
