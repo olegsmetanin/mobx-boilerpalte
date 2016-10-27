@@ -1,4 +1,4 @@
-//// <reference path="./uikit.d.ts" />
+//// <reference path="./generic.d.ts" />
 
 export * from './ClickOutside/ClickOutside'
 export * from './Container/Container'
