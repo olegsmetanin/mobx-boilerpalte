@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import * as React from 'react'
 /* tslint:enable:no-unused-variable */
-import {IndexRoute, Route} from 'lib/Router'
+import {IndexRoute, Route} from 'application/lib/Router'
 
 import {IAppState} from 'application/AppAL/IAppState'
 import {IUserActions} from 'application/AppAL/User/IUserActions'
@@ -10,7 +10,7 @@ import {ISystemActions} from 'application/AppAL/System/ISystemActions'
 import {IHomeModule} from 'application/modules/Home/IHomeModule'
 import {Layout, loadPage} from 'application/сomponents'
 
-import NotFoundPage from '../pages/NotFound'
+import NotFoundPage from 'application/pages/NotFound'
 
 const routes = (args: {
   appState: IAppState,

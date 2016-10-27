@@ -1,28 +1,34 @@
-/* tslint:disable:no-unused-variable */
 import * as React from 'react'
-/* tslint:disable:no-unused-variable */
 
-import {Container} from 'generic'
+import {Container, ContainerWidth} from 'components'
 import {Nav} from './index'
-import {IAppState} from '../AppAL/IAppState'
 
-export const Layout = ({
-    appState,
-    children,
-    route
-  }: {
-    appState: IAppState,
-    children: React.ReactNode,
-    route: any
-  }) => (
-    <Container
-      width={appState.layoutWidth}
-      onChangeWidth={(newLayoutWidth) => {appState.layoutWidth = newLayoutWidth}}
-      className={'layout'}
-    >
-      <Nav route={route}/>
-      {children}
-    </Container>
-)
+export interface ILayoutProps {
+  onLayoutWidthChange: (layoutWidth: ContainerWidth) => void
+  layoutWidth: ContainerWidth
+  dialog: any
+  route: any
+  router: any
+}
+
+export class Layout extends React.Component<ILayoutProps, void> {
+
+  render() {
+    let {route, layoutWidth, onLayoutWidthChange, dialog, children} = this.props
+    return (
+      <Container
+        width={layoutWidth}
+        onChangeWidth={(newLayoutWidth) => {onLayoutWidthChange(newLayoutWidth)}}
+        className={'layout'}
+      >
+        <Nav route={route}/>
+        {children}
+
+        {dialog}
+
+      </Container>
+    )
+  }
+}
 
 export default Layout

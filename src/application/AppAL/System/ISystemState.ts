@@ -1,5 +1,6 @@
 import {ISystem} from './ISystem'
-import {I18n, ContainerWidth} from 'generic'
+import {ContainerWidth} from 'components'
+import {I18n} from 'application/api/i18n/I18n'
 
 export interface ISystemState {
   system: ISystem

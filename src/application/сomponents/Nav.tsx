@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import {observable} from 'lib/Reactive'
-import {Link, IRouter} from 'lib/Router'
+import {observable} from 'application/lib/Reactive'
+import {Link, IRouter} from 'application/lib/Router'
 import {ISystemActions} from 'application/AppAL/System/ISystemActions'
 import {IUser} from 'application/AppAL/User/IUser'
 import {IUserActions} from 'application/AppAL/User/IUserActions'

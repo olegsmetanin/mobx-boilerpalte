@@ -1,21 +1,22 @@
-import {inject, observer, injectAll} from 'lib/Reactive'
-import {withRouter} from 'lib/Router'
+import {inject, observer} from 'application/lib/Reactive'
+import {withRouter} from 'application/lib/Router'
 
-import {Layout as BaseLayout} from './LayoutComponent'
+import {Layout as BaseLayout} from './Layout'
 import {Nav as BaseNav} from './Nav'
 import {ConfirmDialog as BaseConfirmDialog} from './ConfirmDialog'
 import {Dialog as BaseDialog} from './Dialog'
-import {withProps} from 'generic'
+import {withProps} from 'application/utils/withProps'
 export * from './PageLoader'
 
+const injectAll = inject((allStatesAndActions) => allStatesAndActions)
 
 const Dialog = BaseDialog
 
 const ConfirmDialog = injectAll(
   observer(
-    withProps((statesAndActions) => ({
-        i18n: statesAndActions.appState.i18n,
-        hideDialog: statesAndActions.systemActions.hideDialog,
+    withProps((allStatesAndActions) => ({
+        i18n: allStatesAndActions.appState.i18n,
+        hideDialog: allStatesAndActions.systemActions.hideDialog,
         Dialog: Dialog
     }))(
       BaseConfirmDialog
@@ -26,11 +27,11 @@ const ConfirmDialog = injectAll(
 const Layout = injectAll(
   withRouter(
     observer(
-      withProps((statesAndActions) => {
+      withProps((allStatesAndActions) => {
         return ({
-          layoutWidth: statesAndActions.appState.layoutWidth,
-          setlayoutWidth: statesAndActions.systemActions.setLayoutWidth,
-          dialog: statesAndActions.appState.dialog
+          layoutWidth: allStatesAndActions.appState.layoutWidth,
+          onLayoutWidthChange: allStatesAndActions.systemActions.setLayoutWidth,
+          dialog: allStatesAndActions.appState.dialog
         })
       })(
         BaseLayout
@@ -39,10 +40,10 @@ const Layout = injectAll(
   )
 )
 
-const Nav = inject((statesAndActions) => ({
-  systemActions: statesAndActions.systemActions,
-  user: statesAndActions.appState.user,
-  userActions: statesAndActions.userActions
+const Nav = inject((allStatesAndActions) => ({
+  systemActions: allStatesAndActions.systemActions,
+  user: allStatesAndActions.appState.user,
+  userActions: allStatesAndActions.userActions
 }))(withRouter(observer(BaseNav)))
 
 export {

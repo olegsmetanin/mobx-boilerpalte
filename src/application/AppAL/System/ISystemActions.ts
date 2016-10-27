@@ -1,4 +1,4 @@
-import {ContainerWidth} from 'generic'
+import {ContainerWidth} from 'components'
 
 export interface ISystemActions {
   getSystem: () => Promise<void>

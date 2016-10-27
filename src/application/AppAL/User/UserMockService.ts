@@ -1,8 +1,8 @@
-import {delay} from 'generic'
+import {delay} from 'application/utils/delay'
+import {IHTTPClient} from 'application/api/http/IHTTPClient'
 import {IUserService} from './IUserService'
-import {IHTTPClient} from 'generic'
 
-export class UserService implements IUserService {
+export class UserMockService implements IUserService {
 
   constructor(httpClient: IHTTPClient) {
     this.httpClient = httpClient
@@ -29,4 +29,4 @@ export class UserService implements IUserService {
 
 }
 
-export default UserService
+export default UserMockService

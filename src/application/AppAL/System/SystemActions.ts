@@ -3,7 +3,7 @@ import {loadI18n} from 'application/utils/i18n/loadI18n'
 import {ISystemState} from './ISystemState'
 import {ISystemService} from './ISystemService'
 import {ISystemActions} from './ISystemActions'
-import {ContainerWidth} from 'generic'
+import {ContainerWidth} from 'components'
 
 export class SystemActions implements ISystemActions {
 

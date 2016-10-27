@@ -1,11 +1,11 @@
-import {HTTPClient} from 'generic'
+import {HTTPClient} from 'application/lib/http/HTTPClient'
 import {AppState} from './AppAL/AppState'
-import {UserService} from './AppAL/User/UserService'
+import {UserMockService} from './AppAL/User/UserMockService'
 import {UserActions} from './AppAL/User/UserActions'
-import {SystemService} from './AppAL/System/SystemService'
+import {SystemMockService} from './AppAL/System/SystemMockService'
 import {SystemActions} from './AppAL/System/SystemActions'
-import {hashHistory} from 'lib/Router'
-import {EventBus} from 'application/eventBus/eventBus';
+import {hashHistory} from 'application/lib/Router'
+import {EventBus} from 'application/lib/eventBus/EventBus';
 
 export function initAppContext(initState: any) {
   const eventBus = new EventBus()
@@ -14,8 +14,8 @@ export function initAppContext(initState: any) {
   const history = hashHistory
 
   const appState = new AppState(initState)
-  const userActions = new UserActions(appState, new UserService(httpClient))
-  const systemActions = new SystemActions(appState, new SystemService(httpClient), history)
+  const userActions = new UserActions(appState, new UserMockService(httpClient))
+  const systemActions = new SystemActions(appState, new SystemMockService(httpClient), history)
 
   return {
     eventBus,

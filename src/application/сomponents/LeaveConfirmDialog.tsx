@@ -2,14 +2,14 @@
 import * as React from 'react'
 /* tslint:disable:no-unused-variable */
 
-import {IAppState} from '../AppAL/IAppState'
+import {I18n} from 'application/api/i18n/I18n'
 
 export const LeaveConfirmDialog = ({
-  appState
+  i18n
 }: {
-  appState: IAppState,
+  i18n: I18n
 }) => (
   <div>
-    {appState.i18n('app:leaveConfirmDialog')}
+    {i18n('app:leaveConfirmDialog')}
   </div>
 )

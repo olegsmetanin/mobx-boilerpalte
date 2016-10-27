@@ -1,11 +1,11 @@
-/// <reference path="./app.d.ts" />
+/// <reference path="./application.d.ts" />
 
 /* tslint:disable:no-unused-variable */
 import * as React from 'react'
 /* tslint:disable:no-unused-variable */
 
 import {render} from 'react-dom'
-import {reaction} from 'lib/Reactive'
+import {reaction} from 'application/lib/Reactive'
 
 import Application from './Application'
 
