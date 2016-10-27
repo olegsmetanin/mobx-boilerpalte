@@ -1,4 +1,4 @@
-/// <reference path="./docs.d.ts" />
+/// <reference path="./app.d.ts" />
 
 /* tslint:disable:no-unused-variable */
 import * as React from 'react'
@@ -14,7 +14,7 @@ import {initAppContext} from './initAppContext';
 
 require('./styles/styles.scss')
 
-window['docs'] = (options: any) => {
+window['app'] = (options: any) => {
 
   const {el, initState} = options
 

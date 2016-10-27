@@ -7,8 +7,8 @@
 $LAB
   .script("js/lib.js").wait()
   .script("js/app.js").wait(function(){
-  docs({
-    el: document.getElementById('docs'),
+  app({
+    el: document.getElementById('app'),
     initState: initState
   });
 });

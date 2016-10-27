@@ -26,17 +26,19 @@ const register = async ({
     return module
   }
 
-  const ConnectedHomePage = withProps(() => ({
-      appState,
+  const ConnectedHomePage = observer(withProps(() => ({
+      i18n: appState.i18n,
+      layoutWidth: appState.layoutWidth,
       name: 'Home Page'
     })
-  )(observer(HomePage))
+  )(HomePage))
 
-  const ConnectedRestrictedPage = withProps(() => ({
-      appState,
+  const ConnectedRestrictedPage = observer(withProps(() => ({
+      i18n: appState.i18n,
+      layoutWidth: appState.layoutWidth,
       name: 'Restricted Page'
     })
-  )(observer(HomePage))
+  )(HomePage))
 
 
   module = {
