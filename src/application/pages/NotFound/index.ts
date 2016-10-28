@@ -1,5 +1,5 @@
-import {observer} from 'application/lib/reactive'
-import {withRouter} from 'application/lib/router'
+import {observer} from 'lib/reactive'
+import {withRouter} from 'lib/router'
 import {NotFoundPage as BaseNotFoundPage} from './NotFoundPage'
 
 const NotFoundPage = withRouter(observer(BaseNotFoundPage))

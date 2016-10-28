@@ -5,7 +5,7 @@ import * as React from 'react'
 /* tslint:disable:no-unused-variable */
 
 import {render} from 'react-dom'
-import {reaction} from 'application/lib/reactive'
+import {reaction} from 'lib/reactive'
 
 import Application from './Application'
 

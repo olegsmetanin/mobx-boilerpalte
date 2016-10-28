@@ -2,7 +2,7 @@
 import * as React from 'react'
 /* tslint:disable:no-unused-variable */
 
-import {I18n} from 'application/api/i18n/I18n'
+import {I18n} from 'api/i18n/I18n'
 
 export const ConfirmDialog = ({
   children,

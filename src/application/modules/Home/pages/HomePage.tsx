@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import {IAppState} from 'application/AppAL/IAppState'
 import {ISystemActions} from 'application/AppAL/System/ISystemActions'
-import {I18n} from 'application/api/i18n/I18n'
+import {I18n} from 'api/i18n/I18n'
 /**
  * Home page for app
  */

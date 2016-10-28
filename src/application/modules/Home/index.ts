@@ -1,4 +1,4 @@
-import {observer} from 'application/lib/reactive'
+import {observer} from 'lib/reactive'
 import {withProps} from 'application/utils/withProps';
 import {IAppState} from '../../AppAL/IAppState'
 import {IUserActions} from '../../AppAL/User/IUserActions'

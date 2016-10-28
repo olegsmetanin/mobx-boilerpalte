@@ -1,8 +1,8 @@
 {
-    "name": "bcbfi",
+    "name": "mobx-boilerplate",
     "version": "0.0.0",
     "private": true,
-    "repository": "olegsmetanin/uikit",
+    "repository": "olegsmetanin/mobx-boilerplate",
     "scripts": {
         "e2e-test": "webpack --config webpack.test.e2e.config.js && mocha ./build/test/e2e.js --timeout 40000",
         "unit-test": "webpack --config webpack.test.unit.config.js && mocha ./build/test/unit.js --timeout 40000",

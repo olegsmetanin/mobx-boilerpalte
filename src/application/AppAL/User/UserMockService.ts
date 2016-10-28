@@ -1,5 +1,5 @@
 import {delay} from 'application/utils/delay'
-import {IHTTPClient} from 'application/api/http/IHTTPClient'
+import {IHTTPClient} from 'api/http/IHTTPClient'
 import {IUserService} from './IUserService'
 
 export class UserMockService implements IUserService {

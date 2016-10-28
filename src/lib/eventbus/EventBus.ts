@@ -1,5 +1,5 @@
-import {IEvent} from 'application/api/event/IEvent';
-import {IEventBus} from 'application/api/event/IEventBus';
+import {IEvent} from 'api/event/IEvent';
+import {IEventBus} from 'api/event/IEventBus';
 let EventEmitter = require('eventemitter3')
 // import * as EventEmitter from 'eventemitter3';
 
